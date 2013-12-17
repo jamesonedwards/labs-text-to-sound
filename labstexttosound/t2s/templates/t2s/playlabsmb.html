@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Play the soundtrack to the LABSmb social activity</title>   
+    </head>
+    <body>
+    	<h1>Play the soundtrack to the LABSmb social activity</h1>
+        <form action="{% url playlabsmb %}" method="post">
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}</p>
+            <p>{{ form.mood.label_tag }} {{ form.mood.help_text }}</p>
+            <p>
+                {{ form.mood.errors }}
+                {{ form.mood }}
+            </p>
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+    </body>
+</html> 
